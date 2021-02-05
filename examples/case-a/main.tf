@@ -9,10 +9,9 @@ provider "linode" {
 }
 
 resource "linode_domain" "example-com" {
-  soa_email   = yourmail@example.com
+  soa_email   = "yourmail@example.com"
   domain      = "example.com"
   type        = "master"
-  tags        = ["arg"]
 }
 
 module "example-com-records" {
