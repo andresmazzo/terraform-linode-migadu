@@ -1,12 +1,24 @@
-# terraform-linode-migadu-records
+# terraform-linode-migadu
 
-Terraform module for easy config DNS Configurations required by [Migadu](https://www.migadu.com) Mail Service.
+Terraform module for easy DNS configuration required by [Migadu](https://www.migadu.com) Mail Service.
 
 ## Usage
 
+**Using Terraform Registry**
 ```
 module "example-com-mail-records" {
-  source            = "github.com/andresmazzo/terraform-linode-migadu-records"
+  source            = "andresmazzo/migadu/linode"
+  domain_id         = "01234"
+  domain            = "example.com"
+  verification_code = "56789"
+}
+```
+
+
+**Using Github**
+```
+module "example-com-mail-records" {
+  source            = "github.com/andresmazzo/terraform-linode-migadu"
   domain_id         = "01234"
   domain            = "example.com"
   verification_code = "56789"
